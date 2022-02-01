@@ -7,8 +7,8 @@ const displayDrinkPic = document.querySelector("#drinkPic")
 const displayDrinkInstructions = document.querySelector("#instructions")
 const displayDrinkIngregients = document.querySelector("#ingredients")
 const displayDrinkNullIngregients = document.querySelectorAll("div")
-
-const ingredientsArray = []
+const searchList = document.querySelector("#drinkHistory")
+const drinkArray = JSON.parse(localStorage.getItem("drinkHistory")) || []
 
 var cocktail = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="
 var cocktailIngrediants = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
@@ -29,9 +29,13 @@ searchBtn.addEventListener("click", function(event) {
     displayDrinkPic.innerHTML = ""
     displayDrinkInstructions.innerHTML = ""
     var drink = search.value
+    searchList.innerHTML = "";
+    creatHistoryList()
+    setHistoryList()
     getcocktailId(drink);
 })
 
+// function to run the first fetch. this grabs the drink ID
 function getcocktailId(query) {
     fetch(`${cocktail}${query}`)
         .then(response => {
@@ -54,6 +58,7 @@ function getcocktailId(query) {
         })
 }
 
+// this function uses the second fetch to grab the drink instructions and ingredients by using the drink ID from the first fetch
 function getIngrediants(id) {
     fetch(`${cocktailIngrediants}${id}`)
         .then(function(response) {
@@ -63,7 +68,6 @@ function getIngrediants(id) {
         .then(function(data) {
             console.log(data);
             dataArray2 = {...data.drinks[0] }
-                //look through data to find ingredients and measurements values and move forward
             cocktailValues.drinkInstructions = dataArray2.strInstructions
             console.log(dataArray2.strIngredient1)
 
@@ -96,6 +100,37 @@ function displayResults() {
     displayDrinkName.textContent = cocktailValues.drinkName
     displayDrinkPic.src = cocktailValues.drinkImage
     displayDrinkInstructions.innerHTML = "Instructions: " + cocktailValues.drinkInstructions
-
-
 }
+
+//this will create the local storage
+function creatHistoryList() {
+    var list = search.value;
+    drinkArray.push(list);
+    localStorage.setItem("drinkHistory", JSON.stringify(drinkArray));
+}
+//this will display the local storage
+function setHistoryList() {
+    var currentlist = JSON.parse(localStorage.getItem("drinkHistory"));
+    var ul = document.createElement("ul");
+
+    for (let i = 0; i < currentlist.length; i++) {
+        const btnContent = currentlist[i];
+        var li = document.createElement("li");
+        var btn = document.createElement("button");
+        btn.id = "drinkHistoryList"
+        btn.textContent = btnContent;
+        ul.appendChild(li);
+        li.appendChild(btn);
+    }
+    searchList.appendChild(ul);
+}
+//this is the eventlistener for the history buttons that will re-search and display weather data
+searchList.addEventListener("click", function(event) {
+    event.preventDefault();
+    var valueDrink = event.target.textContent
+    search.value = valueDrink
+    getcocktailId(search.value);
+    console.log(search.value)
+})
+
+setHistoryList()
