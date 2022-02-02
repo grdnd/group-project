@@ -180,7 +180,7 @@ function getIngrediants(id) {
             displayResults();
         })
 }
-
+//function to get data for second drink
 function getIngrediants1(id) {
     fetch(`${cocktailIngrediants}${id}`)
         .then(function(response) {
@@ -217,7 +217,7 @@ function getIngrediants1(id) {
             displayResults1();
         })
 }
-
+//function to get data for third drink
 function getIngrediants2(id) {
     fetch(`${cocktailIngrediants}${id}`)
         .then(function(response) {
@@ -254,7 +254,7 @@ function getIngrediants2(id) {
             displayResults2();
         })
 }
-
+//function to get data for fourth drink
 function getIngrediants3(id) {
     fetch(`${cocktailIngrediants}${id}`)
         .then(function(response) {
@@ -291,7 +291,7 @@ function getIngrediants3(id) {
             displayResults3();
         })
 }
-
+//function to get data for fifth drink
 function getIngrediants4(id) {
     fetch(`${cocktailIngrediants}${id}`)
         .then(function(response) {
@@ -328,7 +328,7 @@ function getIngrediants4(id) {
             displayResults4();
         })
 }
-
+//function to get data for sixth drink
 function getIngrediants5(id) {
     fetch(`${cocktailIngrediants}${id}`)
         .then(function(response) {
@@ -365,37 +365,37 @@ function getIngrediants5(id) {
             displayResults5();
         })
 }
-
+//displays results for the first drink
 function displayResults() {
     displayDrinkName.textContent = cocktailValues.drinkName
     displayDrinkPic.src = cocktailValues.drinkImage
     displayDrinkInstructions.innerHTML = "Instructions: " + cocktailValues.drinkInstructions
 }
-
+//displays results for the second drink
 function displayResults1() {
     displayDrinkName1.textContent = cocktailValues2[0].drinkName
     displayDrinkPic1.src = cocktailValues2[0].drinkImage
     displayDrinkInstructions1.innerHTML = "Instructions: " + cocktailValues2[0].drinkInstructions
 }
-
+//displays results for the third drink
 function displayResults2() {
     displayDrinkName2.textContent = cocktailValues2[1].drinkName
     displayDrinkPic2.src = cocktailValues2[1].drinkImage
     displayDrinkInstructions2.innerHTML = "Instructions: " + cocktailValues2[1].drinkInstructions
 }
-
+//displays results for the fourth drink
 function displayResults3() {
     displayDrinkName3.textContent = cocktailValues2[2].drinkName
     displayDrinkPic3.src = cocktailValues2[2].drinkImage
     displayDrinkInstructions3.innerHTML = "Instructions: " + cocktailValues2[2].drinkInstructions
 }
-
+//displays results for the fifth drink
 function displayResults4() {
     displayDrinkName4.textContent = cocktailValues2[3].drinkName
     displayDrinkPic4.src = cocktailValues2[3].drinkImage
     displayDrinkInstructions4.innerHTML = "Instructions: " + cocktailValues2[3].drinkInstructions
 }
-
+//displays results for the sixth drink
 function displayResults5() {
     displayDrinkName5.textContent = cocktailValues2[4].drinkName
     displayDrinkPic5.src = cocktailValues2[4].drinkImage
