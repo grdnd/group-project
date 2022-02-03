@@ -20,76 +20,79 @@
     </header>
 
     <main>
-
-        <aside class="left">
-            <h2>Search for an ingredient:</h2>
-            <form>
-                <input type="text" placeholder="What's YOUR buzz?" id="product" autocomplete="off" />
-                <button type="submit" id="search"><i class="fa fa-search"></i></button>
-            </form>
-            <hr>
-            <div class="histContainer">
-                <div id="drinkHistory"></div>
-            </div>
-        </aside>
-        <br>
-        <div class="right">
-            <section id="results">
-                <div class="">
-                    <h1 id="drinkName"></h1>
-                    <img href="" id="drinkPic"></img>
-                    <div id="instructions"></div>
-                    <div id="ingredients"></div>
+        <!-- Bulma columns container -->
+        <section class="columns">
+            <!-- First page column for search -->
+            <aside class="column is-one-quarter">
+                <h2>Search for an ingredient:</h2>
+                <form>
+                    <input type="text" placeholder="What's YOUR buzz?" id="product" autocomplete="off" />
+                    <button type="submit" id="search"><i class="fa fa-search"></i></button>
+                </form>
+                <hr>
+                <div class="histContainer">
+                    <div id="drinkHistory"></div>
                 </div>
-                <br>
-                <section>
-                    <div class="card1">
-                        <section id="drink1">
-                            <h1 id="drinkName1"></h1>
-                            <img href="" id="drinkPic1"></img>
-                            <div id="instructions1"></div>
-                            <div id="ingredients1"></div>
-                        </section>
+            </aside>
+            <!-- Second column for drinks -->
+            <div class="column is-half">
+                <section id="results">
+                    <div class="">
+                        <h1 id="drinkName"></h1>
+                        <img href="" id="drinkPic"></img>
+                        <div id="instructions"></div>
+                        <div id="ingredients"></div>
                     </div>
                     <br>
-                    <div class="card2">
-                        <section id="drink2">
-                            <h1 id="drinkName2"></h1>
-                            <img href="" id="drinkPic2"></img>
-                            <div id="instructions2"></div>
-                            <div id="ingredients2"></div>
-                        </section>
-                    </div>
-                    <br>
-                    <div class="card3">
-                        <section id="drink3">
-                            <h1 id="drinkName3"></h1>
-                            <img href="" id="drinkPic3"></img>
-                            <div id="instructions3"></div>
-                            <div id="ingredients3"></div>
-                        </section>
-                    </div>
-                    <br>
-                    <div class="card4">
-                        <section id="drink4">
-                            <h1 id="drinkName4"></h1>
-                            <img href="" id="drinkPic4"></img>
-                            <div id="instructions4"></div>
-                            <div id="ingredients4"></div>
-                        </section>
-                    </div>
-                    <br>
-                    <div class="card5">
-                        <section id="drink5">
-                            <h1 id="drinkName5"></h1>
-                            <img href="" id="drinkPic5"></img>
-                            <div id="instructions5"></div>
-                            <div id="ingredients5"></div>
-                        </section>
-                    </div>
+                    <section>
+                        <div class="card1">
+                            <section id="drink1">
+                                <h1 id="drinkName1"></h1>
+                                <img href="" id="drinkPic1"></img>
+                                <div id="instructions1"></div>
+                                <div id="ingredients1"></div>
+                            </section>
+                        </div>
+                        <br>
+                        <div class="card2">
+                            <section id="drink2">
+                                <h1 id="drinkName2"></h1>
+                                <img href="" id="drinkPic2"></img>
+                                <div id="instructions2"></div>
+                                <div id="ingredients2"></div>
+                            </section>
+                        </div>
+                        <br>
+                        <div class="card3">
+                            <section id="drink3">
+                                <h1 id="drinkName3"></h1>
+                                <img href="" id="drinkPic3"></img>
+                                <div id="instructions3"></div>
+                                <div id="ingredients3"></div>
+                            </section>
+                        </div>
+                        <br>
+                        <div class="card4">
+                            <section id="drink4">
+                                <h1 id="drinkName4"></h1>
+                                <img href="" id="drinkPic4"></img>
+                                <div id="instructions4"></div>
+                                <div id="ingredients4"></div>
+                            </section>
+                        </div>
+                        <br>
+                        <div class="card5">
+                            <section id="drink5">
+                                <h1 id="drinkName5"></h1>
+                                <img href="" id="drinkPic5"></img>
+                                <div id="instructions5"></div>
+                                <div id="ingredients5"></div>
+                            </section>
+                        </div>
+                    </section>
                 </section>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
     <script src="./Assets/JS/script.js"></script>
 </body>
