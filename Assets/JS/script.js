@@ -1,43 +1,44 @@
 // global variables
 const search = document.querySelector("#product");
 const searchBtn = document.querySelector("#search");
-const display = document.querySelector("#results")
-const displayDrinkName = document.querySelector("#drinkName")
-const displayDrinkPic = document.querySelector("#drinkPic")
-const displayDrinkInstructions = document.querySelector("#instructions")
-const displayDrinkIngregients = document.querySelector("#ingredients")
+const display = document.querySelector("#results");
+const displayDrinkName = document.querySelector("#drinkName");
+const displayDrinkPic = document.querySelector("#drinkPic");
+const displayDrinkInstructions = document.querySelector("#instructions");
+const displayDrinkIngregients = document.querySelector("#ingredients");
 
-const displayDrinkName1 = document.querySelector("#drinkName1")
-const displayDrinkPic1 = document.querySelector("#drinkPic1")
-const displayDrinkInstructions1 = document.querySelector("#instructions1")
-const displayDrinkIngregients1 = document.querySelector("#ingredients1")
+const displayDrinkName1 = document.querySelector("#drinkName1");
+const displayDrinkPic1 = document.querySelector("#drinkPic1");
+const displayDrinkInstructions1 = document.querySelector("#instructions1");
+const displayDrinkIngregients1 = document.querySelector("#ingredients1");
 
-const displayDrinkName2 = document.querySelector("#drinkName2")
-const displayDrinkPic2 = document.querySelector("#drinkPic2")
-const displayDrinkInstructions2 = document.querySelector("#instructions2")
-const displayDrinkIngregients2 = document.querySelector("#ingredients2")
+const displayDrinkName2 = document.querySelector("#drinkName2");
+const displayDrinkPic2 = document.querySelector("#drinkPic2");
+const displayDrinkInstructions2 = document.querySelector("#instructions2");
+const displayDrinkIngregients2 = document.querySelector("#ingredients2");
 
-const displayDrinkName3 = document.querySelector("#drinkName3")
-const displayDrinkPic3 = document.querySelector("#drinkPic3")
-const displayDrinkInstructions3 = document.querySelector("#instructions3")
-const displayDrinkIngregients3 = document.querySelector("#ingredients3")
+const displayDrinkName3 = document.querySelector("#drinkName3");
+const displayDrinkPic3 = document.querySelector("#drinkPic3");
+const displayDrinkInstructions3 = document.querySelector("#instructions3");
+const displayDrinkIngregients3 = document.querySelector("#ingredients3");
 
-const displayDrinkName4 = document.querySelector("#drinkName4")
-const displayDrinkPic4 = document.querySelector("#drinkPic4")
-const displayDrinkInstructions4 = document.querySelector("#instructions4")
-const displayDrinkIngregients4 = document.querySelector("#ingredients4")
+const displayDrinkName4 = document.querySelector("#drinkName4");
+const displayDrinkPic4 = document.querySelector("#drinkPic4");
+const displayDrinkInstructions4 = document.querySelector("#instructions4");
+const displayDrinkIngregients4 = document.querySelector("#ingredients4");
 
-const displayDrinkName5 = document.querySelector("#drinkName5")
-const displayDrinkPic5 = document.querySelector("#drinkPic5")
-const displayDrinkInstructions5 = document.querySelector("#instructions5")
-const displayDrinkIngregients5 = document.querySelector("#ingredients5")
+const displayDrinkName5 = document.querySelector("#drinkName5");
+const displayDrinkPic5 = document.querySelector("#drinkPic5");
+const displayDrinkInstructions5 = document.querySelector("#instructions5");
+const displayDrinkIngregients5 = document.querySelector("#ingredients5");
 
-const displayDrinkNullIngregients = document.querySelectorAll("div")
-const searchList = document.querySelector("#drinkHistory")
+const displayDrinkNullIngregients = document.querySelectorAll("div");
+const searchList = document.querySelector("#drinkHistory");
+const clearList = document.querySelector("#clear");
 const drinkArray = JSON.parse(localStorage.getItem("drinkHistory")) || []
 
-var cocktail = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i="
-var cocktailIngrediants = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i="
+var cocktail = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
+var cocktailIngrediants = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
 var cocktailValues = {
     drinkId: "",
@@ -79,18 +80,16 @@ var cocktailValues2 = {
     },
 }
 
-var ingrediantValues = []
-
 //event listener for the seachbuttom. this will grab the first fetch using the value typed in the textbox
 searchBtn.addEventListener("click", function(event) {
     event.preventDefault();
-    displayDrinkName.innerHTML = ""
-    displayDrinkPic.innerHTML = ""
-    displayDrinkInstructions.innerHTML = ""
-    var drink = search.value
+    displayDrinkName.innerHTML = "";
+    displayDrinkPic.innerHTML = "";
+    displayDrinkInstructions.innerHTML = "";
+    var drink = search.value;
     searchList.innerHTML = "";
-    creatHistoryList()
-    setHistoryList()
+    creatHistoryList();
+    setHistoryList();
     getcocktailId(drink);
 })
 
@@ -103,13 +102,38 @@ function getcocktailId(query) {
         })
         .then(function(data) {
             if (data === "") {
-                displayDrinkName.innerHTML = "No drinks found. Please try a different ingredient"
+                displayDrinkName.innerHTML = "No drinks found. Please try a different ingredient";
                 displayDrinkPic.src = "https://www.creativefabrica.com/wp-content/uploads/2020/02/09/Red-Glass-Of-Wine-Cartoon-Character-Graphics-1-179-580x421.jpg";
                 displayDrinkInstructions.innerHTML = "Please Try A Different Ingredient";
                 displayDrinkIngregients.innerHTML = "";
+
+                displayDrinkName1.innerHTML = "";
+                displayDrinkPic1.src = "";
+                displayDrinkInstructions1.innerHTML = "";
+                displayDrinkIngregients1.innerHTML = "";
+
+                displayDrinkName2.innerHTML = "";
+                displayDrinkPic2.src = "";
+                displayDrinkInstructions2.innerHTML = "";
+                displayDrinkIngregients2.innerHTML = "";
+
+                displayDrinkName3.innerHTML = "";
+                displayDrinkPic3.src = "";
+                displayDrinkInstructions3.innerHTML = "";
+                displayDrinkIngregients3.innerHTML = "";
+
+                displayDrinkName4.innerHTML = "";
+                displayDrinkPic4.src = "";
+                displayDrinkInstructions4.innerHTML = "";
+                displayDrinkIngregients4.innerHTML = "";
+
+                displayDrinkName5.innerHTML = "";
+                displayDrinkPic5.src = "";
+                displayDrinkInstructions5.innerHTML = "";
+                displayDrinkIngregients5.innerHTML = "";
             } else {
                 let parsedData = JSON.parse(data);
-                console.log(parsedData)
+                console.log(parsedData);
                 cocktailValues.drinkId = parsedData.drinks[0].idDrink;
                 cocktailValues.drinkName = parsedData.drinks[0].strDrink;
                 cocktailValues.drinkImage = parsedData.drinks[0].strDrinkThumb;
@@ -133,12 +157,12 @@ function getcocktailId(query) {
                 cocktailValues2[4].drinkId = parsedData.drinks[5].idDrink;
                 cocktailValues2[4].drinkName = parsedData.drinks[5].strDrink;
                 cocktailValues2[4].drinkImage = parsedData.drinks[5].strDrinkThumb;
-                getIngrediants(cocktailValues.drinkId)
-                getIngrediants1(cocktailValues2[0].drinkId)
-                getIngrediants2(cocktailValues2[1].drinkId)
-                getIngrediants3(cocktailValues2[2].drinkId)
-                getIngrediants4(cocktailValues2[3].drinkId)
-                getIngrediants5(cocktailValues2[4].drinkId)
+                getIngrediants(cocktailValues.drinkId);
+                getIngrediants1(cocktailValues2[0].drinkId);
+                getIngrediants2(cocktailValues2[1].drinkId);
+                getIngrediants3(cocktailValues2[2].drinkId);
+                getIngrediants4(cocktailValues2[3].drinkId);
+                getIngrediants5(cocktailValues2[4].drinkId);
             }
         })
 }
@@ -152,18 +176,18 @@ function getIngrediants(id) {
         })
         .then(function(data) {
             console.log(data);
-            dataArray2 = {...data.drinks[0] }
-            cocktailValues.drinkInstructions = dataArray2.strInstructions
-            console.log(dataArray2.strIngredient1)
+            dataArray2 = {...data.drinks[0] };
+            cocktailValues.drinkInstructions = dataArray2.strInstructions;
+            console.log(dataArray2.strIngredient1);
 
-            displayDrinkIngregients.innerHTML = "Ingredients: "
-            dataArray = Object.entries(data.drinks[0])
+            displayDrinkIngregients.innerHTML = "Ingredients: ";
+            dataArray = Object.entries(data.drinks[0]);
 
             for (each of dataArray.slice(17, 32)) {
                 if (each[1] === "" || each[1] === null) {
 
                 } else {
-                    console.log(each[1], dataArray[dataArray.indexOf(each) + 15][1])
+                    console.log(each[1], dataArray[dataArray.indexOf(each) + 15][1]);
                 }
             }
 
@@ -172,9 +196,9 @@ function getIngrediants(id) {
 
                 } else {
                     console.log(each)
-                    const newIngredient = document.createElement('div')
-                    newIngredient.textContent = each[1] + ' :   ' + dataArray[dataArray.indexOf(each) + 15][1]
-                    displayDrinkIngregients.append(newIngredient)
+                    const newIngredient = document.createElement('div');
+                    newIngredient.textContent = each[1] + ' :   ' + dataArray[dataArray.indexOf(each) + 15][1];
+                    displayDrinkIngregients.append(newIngredient);
                 }
             }
             displayResults();
@@ -189,18 +213,18 @@ function getIngrediants1(id) {
         })
         .then(function(data) {
             console.log(data);
-            dataArray2 = {...data.drinks[0] }
-            cocktailValues2[0].drinkInstructions = dataArray2.strInstructions
-            console.log(dataArray2.strIngredient1)
+            dataArray2 = {...data.drinks[0] };
+            cocktailValues2[0].drinkInstructions = dataArray2.strInstructions;
+            console.log(dataArray2.strIngredient1);
 
-            displayDrinkIngregients1.innerHTML = "Ingredients: "
-            dataArray = Object.entries(data.drinks[0])
+            displayDrinkIngregients1.innerHTML = "Ingredients: ";
+            dataArray = Object.entries(data.drinks[0]);
 
             for (each of dataArray.slice(17, 32)) {
                 if (each[1] === "" || each[1] === null) {
 
                 } else {
-                    console.log(each[1], dataArray[dataArray.indexOf(each) + 15][1])
+                    console.log(each[1], dataArray[dataArray.indexOf(each) + 15][1]);
                 }
             }
 
@@ -208,10 +232,10 @@ function getIngrediants1(id) {
                 if (each[1] === "" || each[1] === null) {
 
                 } else {
-                    console.log(each)
-                    const newIngredient = document.createElement('div')
-                    newIngredient.textContent = each[1] + ' :   ' + dataArray[dataArray.indexOf(each) + 15][1]
-                    displayDrinkIngregients1.append(newIngredient)
+                    console.log(each);
+                    const newIngredient = document.createElement('div');
+                    newIngredient.textContent = each[1] + ' :   ' + dataArray[dataArray.indexOf(each) + 15][1];
+                    displayDrinkIngregients1.append(newIngredient);
                 }
             }
             displayResults1();
@@ -226,18 +250,18 @@ function getIngrediants2(id) {
         })
         .then(function(data) {
             console.log(data);
-            dataArray2 = {...data.drinks[0] }
-            cocktailValues2[1].drinkInstructions = dataArray2.strInstructions
-            console.log(dataArray2.strIngredient1)
+            dataArray2 = {...data.drinks[0] };
+            cocktailValues2[1].drinkInstructions = dataArray2.strInstructions;
+            console.log(dataArray2.strIngredient1);
 
-            displayDrinkIngregients2.innerHTML = "Ingredients: "
-            dataArray = Object.entries(data.drinks[0])
+            displayDrinkIngregients2.innerHTML = "Ingredients: ";
+            dataArray = Object.entries(data.drinks[0]);
 
             for (each of dataArray.slice(17, 32)) {
                 if (each[1] === "" || each[1] === null) {
 
                 } else {
-                    console.log(each[1], dataArray[dataArray.indexOf(each) + 15][1])
+                    console.log(each[1], dataArray[dataArray.indexOf(each) + 15][1]);
                 }
             }
 
@@ -245,10 +269,10 @@ function getIngrediants2(id) {
                 if (each[1] === "" || each[1] === null) {
 
                 } else {
-                    console.log(each)
-                    const newIngredient = document.createElement('div')
-                    newIngredient.textContent = each[1] + ' :   ' + dataArray[dataArray.indexOf(each) + 15][1]
-                    displayDrinkIngregients2.append(newIngredient)
+                    console.log(each);
+                    const newIngredient = document.createElement('div');
+                    newIngredient.textContent = each[1] + ' :   ' + dataArray[dataArray.indexOf(each) + 15][1];
+                    displayDrinkIngregients2.append(newIngredient);
                 }
             }
             displayResults2();
@@ -263,18 +287,18 @@ function getIngrediants3(id) {
         })
         .then(function(data) {
             console.log(data);
-            dataArray2 = {...data.drinks[0] }
-            cocktailValues2[2].drinkInstructions = dataArray2.strInstructions
-            console.log(dataArray2.strIngredient1)
+            dataArray2 = {...data.drinks[0] };
+            cocktailValues2[2].drinkInstructions = dataArray2.strInstructions;
+            console.log(dataArray2.strIngredient1);
 
-            displayDrinkIngregients3.innerHTML = "Ingredients: "
-            dataArray = Object.entries(data.drinks[0])
+            displayDrinkIngregients3.innerHTML = "Ingredients: ";
+            dataArray = Object.entries(data.drinks[0]);
 
             for (each of dataArray.slice(17, 32)) {
                 if (each[1] === "" || each[1] === null) {
 
                 } else {
-                    console.log(each[1], dataArray[dataArray.indexOf(each) + 15][1])
+                    console.log(each[1], dataArray[dataArray.indexOf(each) + 15][1]);
                 }
             }
 
@@ -282,10 +306,10 @@ function getIngrediants3(id) {
                 if (each[1] === "" || each[1] === null) {
 
                 } else {
-                    console.log(each)
-                    const newIngredient = document.createElement('div')
-                    newIngredient.textContent = each[1] + ' :   ' + dataArray[dataArray.indexOf(each) + 15][1]
-                    displayDrinkIngregients3.append(newIngredient)
+                    console.log(each);
+                    const newIngredient = document.createElement('div');
+                    newIngredient.textContent = each[1] + ' :   ' + dataArray[dataArray.indexOf(each) + 15][1];
+                    displayDrinkIngregients3.append(newIngredient);
                 }
             }
             displayResults3();
@@ -300,18 +324,18 @@ function getIngrediants4(id) {
         })
         .then(function(data) {
             console.log(data);
-            dataArray2 = {...data.drinks[0] }
-            cocktailValues2[3].drinkInstructions = dataArray2.strInstructions
-            console.log(dataArray2.strIngredient1)
+            dataArray2 = {...data.drinks[0] };
+            cocktailValues2[3].drinkInstructions = dataArray2.strInstructions;
+            console.log(dataArray2.strIngredient1);
 
-            displayDrinkIngregients4.innerHTML = "Ingredients: "
-            dataArray = Object.entries(data.drinks[0])
+            displayDrinkIngregients4.innerHTML = "Ingredients: ";
+            dataArray = Object.entries(data.drinks[0]);
 
             for (each of dataArray.slice(17, 32)) {
                 if (each[1] === "" || each[1] === null) {
 
                 } else {
-                    console.log(each[1], dataArray[dataArray.indexOf(each) + 15][1])
+                    console.log(each[1], dataArray[dataArray.indexOf(each) + 15][1]);
                 }
             }
 
@@ -319,10 +343,10 @@ function getIngrediants4(id) {
                 if (each[1] === "" || each[1] === null) {
 
                 } else {
-                    console.log(each)
-                    const newIngredient = document.createElement('div')
-                    newIngredient.textContent = each[1] + ' :   ' + dataArray[dataArray.indexOf(each) + 15][1]
-                    displayDrinkIngregients4.append(newIngredient)
+                    console.log(each);
+                    const newIngredient = document.createElement('div');
+                    newIngredient.textContent = each[1] + ' :   ' + dataArray[dataArray.indexOf(each) + 15][1];
+                    displayDrinkIngregients4.append(newIngredient);
                 }
             }
             displayResults4();
@@ -337,18 +361,18 @@ function getIngrediants5(id) {
         })
         .then(function(data) {
             console.log(data);
-            dataArray2 = {...data.drinks[0] }
-            cocktailValues2[4].drinkInstructions = dataArray2.strInstructions
-            console.log(dataArray2.strIngredient1)
+            dataArray2 = {...data.drinks[0] };
+            cocktailValues2[4].drinkInstructions = dataArray2.strInstructions;
+            console.log(dataArray2.strIngredient1);
 
-            displayDrinkIngregients5.innerHTML = "Ingredients: "
-            dataArray = Object.entries(data.drinks[0])
+            displayDrinkIngregients5.innerHTML = "Ingredients: ";
+            dataArray = Object.entries(data.drinks[0]);
 
             for (each of dataArray.slice(17, 32)) {
                 if (each[1] === "" || each[1] === null) {
 
                 } else {
-                    console.log(each[1], dataArray[dataArray.indexOf(each) + 15][1])
+                    console.log(each[1], dataArray[dataArray.indexOf(each) + 15][1]);
                 }
             }
 
@@ -356,10 +380,10 @@ function getIngrediants5(id) {
                 if (each[1] === "" || each[1] === null) {
 
                 } else {
-                    console.log(each)
-                    const newIngredient = document.createElement('div')
-                    newIngredient.textContent = each[1] + ' :   ' + dataArray[dataArray.indexOf(each) + 15][1]
-                    displayDrinkIngregients5.append(newIngredient)
+                    console.log(each);
+                    const newIngredient = document.createElement('div');
+                    newIngredient.textContent = each[1] + ' :   ' + dataArray[dataArray.indexOf(each) + 15][1];
+                    displayDrinkIngregients5.append(newIngredient);
                 }
             }
             displayResults5();
@@ -367,39 +391,39 @@ function getIngrediants5(id) {
 }
 //displays results for the first drink
 function displayResults() {
-    displayDrinkName.textContent = cocktailValues.drinkName
-    displayDrinkPic.src = cocktailValues.drinkImage
-    displayDrinkInstructions.innerHTML = "Instructions: " + cocktailValues.drinkInstructions
+    displayDrinkName.textContent = cocktailValues.drinkName;
+    displayDrinkPic.src = cocktailValues.drinkImage;
+    displayDrinkInstructions.innerHTML = "Instructions: " + cocktailValues.drinkInstructions;
 }
 //displays results for the second drink
 function displayResults1() {
-    displayDrinkName1.textContent = cocktailValues2[0].drinkName
-    displayDrinkPic1.src = cocktailValues2[0].drinkImage
-    displayDrinkInstructions1.innerHTML = "Instructions: " + cocktailValues2[0].drinkInstructions
+    displayDrinkName1.textContent = cocktailValues2[0].drinkName;
+    displayDrinkPic1.src = cocktailValues2[0].drinkImage;
+    displayDrinkInstructions1.innerHTML = "Instructions: " + cocktailValues2[0].drinkInstructions;
 }
 //displays results for the third drink
 function displayResults2() {
-    displayDrinkName2.textContent = cocktailValues2[1].drinkName
-    displayDrinkPic2.src = cocktailValues2[1].drinkImage
-    displayDrinkInstructions2.innerHTML = "Instructions: " + cocktailValues2[1].drinkInstructions
+    displayDrinkName2.textContent = cocktailValues2[1].drinkName;
+    displayDrinkPic2.src = cocktailValues2[1].drinkImage;
+    displayDrinkInstructions2.innerHTML = "Instructions: " + cocktailValues2[1].drinkInstructions;
 }
 //displays results for the fourth drink
 function displayResults3() {
-    displayDrinkName3.textContent = cocktailValues2[2].drinkName
-    displayDrinkPic3.src = cocktailValues2[2].drinkImage
-    displayDrinkInstructions3.innerHTML = "Instructions: " + cocktailValues2[2].drinkInstructions
+    displayDrinkName3.textContent = cocktailValues2[2].drinkName;
+    displayDrinkPic3.src = cocktailValues2[2].drinkImage;
+    displayDrinkInstructions3.innerHTML = "Instructions: " + cocktailValues2[2].drinkInstructions;
 }
 //displays results for the fifth drink
 function displayResults4() {
-    displayDrinkName4.textContent = cocktailValues2[3].drinkName
-    displayDrinkPic4.src = cocktailValues2[3].drinkImage
-    displayDrinkInstructions4.innerHTML = "Instructions: " + cocktailValues2[3].drinkInstructions
+    displayDrinkName4.textContent = cocktailValues2[3].drinkName;
+    displayDrinkPic4.src = cocktailValues2[3].drinkImage;
+    displayDrinkInstructions4.innerHTML = "Instructions: " + cocktailValues2[3].drinkInstructions;
 }
 //displays results for the sixth drink
 function displayResults5() {
-    displayDrinkName5.textContent = cocktailValues2[4].drinkName
-    displayDrinkPic5.src = cocktailValues2[4].drinkImage
-    displayDrinkInstructions5.innerHTML = "Instructions: " + cocktailValues2[4].drinkInstructions
+    displayDrinkName5.textContent = cocktailValues2[4].drinkName;
+    displayDrinkPic5.src = cocktailValues2[4].drinkImage;
+    displayDrinkInstructions5.innerHTML = "Instructions: " + cocktailValues2[4].drinkInstructions;
 }
 
 //this will create the local storage
@@ -417,7 +441,7 @@ function setHistoryList() {
         const btnContent = currentlist[i];
         var li = document.createElement("li");
         var btn = document.createElement("button");
-        btn.id = "drinkHistoryList"
+        btn.id = "drinkHistoryList";
         btn.textContent = btnContent;
         ul.appendChild(li);
         li.appendChild(btn);
@@ -427,10 +451,16 @@ function setHistoryList() {
 //this is the eventlistener for the history buttons that will re-search and display weather data
 searchList.addEventListener("click", function(event) {
     event.preventDefault();
-    var valueDrink = event.target.textContent
-    search.value = valueDrink
+    var valueDrink = event.target.textContent;
+    search.value = valueDrink;
     getcocktailId(search.value);
     console.log(search.value)
 })
 
-setHistoryList()
+clearList.addEventListener("click", function(event) {
+    event.preventDefault();
+    localStorage.clear();
+    location.reload();
+})
+
+setHistoryList();
