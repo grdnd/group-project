@@ -27,11 +27,19 @@ hr {
     /* display: none; */
 }
 
+.instructions {
+    padding: 0 5%;
+}
 #drinkName, #drinkName1, #drinkName2, #drinkName3, #drinkName4, #drinkName5 {
     font-size: 300%;
+    margin: 2%;
 }
 #ingredients, #ingredients1, #ingredients2, #ingredients3, #ingredients4, #ingredients5 {
     text-align: center;
+}
+
+img {
+    padding: 3% 3%;
 }
 
 h1 {
