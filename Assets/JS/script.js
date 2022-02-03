@@ -39,6 +39,7 @@ const drinkArray = JSON.parse(localStorage.getItem("drinkHistory")) || []
 
 var cocktail = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
 var cocktailIngrediants = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
+const unhide = document.getElementsByClassName(".card");
 
 var cocktailValues = {
     drinkId: "",
@@ -83,6 +84,7 @@ var cocktailValues2 = {
 //event listener for the seachbuttom. this will grab the first fetch using the value typed in the textbox
 searchBtn.addEventListener("click", function(event) {
     event.preventDefault();
+    display.style.display = "block"
     displayDrinkName.innerHTML = "";
     displayDrinkPic.innerHTML = "";
     displayDrinkInstructions.innerHTML = "";
@@ -451,14 +453,16 @@ function setHistoryList() {
 //this is the eventlistener for the history buttons that will re-search and display weather data
 searchList.addEventListener("click", function(event) {
     event.preventDefault();
+    display.style.display = "block"
     var valueDrink = event.target.textContent;
     search.value = valueDrink;
     getcocktailId(search.value);
-    console.log(search.value)
+    console.log(search.value);
 })
 
 clearList.addEventListener("click", function(event) {
     event.preventDefault();
+    display.style.display = "none"
     localStorage.clear();
     location.reload();
 })
