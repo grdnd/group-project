@@ -10,7 +10,9 @@ body {
     font-family: 'Voltaire', sans-serif;
 }
 
+
 /* Line divider */
+
 hr {
     color: black;
     height: 5px;
@@ -27,14 +29,30 @@ hr {
     /* display: none; */
 }
 
+#results {
+    display: none;
+}
+
 .instructions {
     padding: 0 5%;
 }
-#drinkName, #drinkName1, #drinkName2, #drinkName3, #drinkName4, #drinkName5 {
+
+#drinkName,
+#drinkName1,
+#drinkName2,
+#drinkName3,
+#drinkName4,
+#drinkName5 {
     font-size: 300%;
     margin: 2%;
 }
-#ingredients, #ingredients1, #ingredients2, #ingredients3, #ingredients4, #ingredients5 {
+
+#ingredients,
+#ingredients1,
+#ingredients2,
+#ingredients3,
+#ingredients4,
+#ingredients5 {
     text-align: center;
 }
 
@@ -51,9 +69,11 @@ h2 {
     padding: 0rem 1rem;
 }
 
-#product, form {
+#product,
+form {
     padding: 0rem 1rem;
 }
+
 #drinkHistory ul {
     list-style-type: none;
     flex-direction: column;
@@ -65,4 +85,3 @@ h2 {
     width: 100%;
     margin: 1%;
 }
-
