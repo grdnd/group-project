@@ -2,6 +2,7 @@
 const search = document.querySelector("#product");
 const searchBtn = document.querySelector("#search");
 const display = document.querySelector("#results");
+const display2 = document.querySelector("#results2");
 const displayDrinkName = document.querySelector("#drinkName");
 const displayDrinkPic = document.querySelector("#drinkPic");
 const displayDrinkInstructions = document.querySelector("#instructions");
@@ -85,6 +86,7 @@ var cocktailValues2 = {
 searchBtn.addEventListener("click", function(event) {
     event.preventDefault();
     display.style.display = "block"
+    display2.style.display = "block"
     displayDrinkName.innerHTML = "";
     displayDrinkPic.innerHTML = "";
     displayDrinkInstructions.innerHTML = "";
@@ -454,6 +456,7 @@ function setHistoryList() {
 searchList.addEventListener("click", function(event) {
     event.preventDefault();
     display.style.display = "block"
+    display2.style.display = "block"
     var valueDrink = event.target.textContent;
     search.value = valueDrink;
     getcocktailId(search.value);
@@ -463,6 +466,7 @@ searchList.addEventListener("click", function(event) {
 clearList.addEventListener("click", function(event) {
     event.preventDefault();
     display.style.display = "none"
+    display2.style.display = "none"
     localStorage.clear();
     location.reload();
 })

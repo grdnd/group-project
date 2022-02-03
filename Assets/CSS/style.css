@@ -1,7 +1,6 @@
 /* CSS variables */
-:root {
-    
-}
+
+:root {}
 
 * {
     margin: 0;
@@ -45,6 +44,10 @@ h2 {
     display: none;
 }
 
+#results2 {
+    display: none;
+}
+
 .instructions {
     padding: 0 5%;
 }
@@ -78,6 +81,7 @@ form {
     list-style-type: none;
     flex-direction: column;
 }
+
 #drinkHistory button {
     align-items: center;
     font-size: 80%;
