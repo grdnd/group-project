@@ -2,3 +2,44 @@
     margin: 0;
     text-align: center;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Voltaire', sans-serif;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Set aside to the left */
+.left {
+    
+    width: 30%;
+    
+}
+
+/* Line divider */
+hr {
+    width: 100vw;
+    margin: 1rem 0rem;
+} 
+
+#drinkHistory ul {
+    list-style-type: none;
+    flex-direction: column;
+}
+
+#drinkHistory button {
+    align-items: center;
+    font-size: 80%;
+    width: 100%;
+    margin: 1%;
+}
+
