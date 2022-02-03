@@ -1,6 +1,6 @@
+/* CSS variables */
 :root {
-    --main-bg-color: #aeaced
-    --secondary-color: 
+    
 }
 
 * {
@@ -22,11 +22,30 @@ hr {
     width: 100%;
 }
 
+img {
+    padding: 0 3%;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 2rem;
+    padding: 0rem 1rem;
+}
+/* We want to hide card shadows on startup */
 .card {
-    
-    width: 60%;
-    /* Hide card shadows on startup */
+    width: 50%;
     /* display: none; */
+}
+
+/* This only fixes the position of the FIRST Result */
+#results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #instructions, #instructions1, #instructions2, #instructions3, #instructions4, #instructions5 {
@@ -39,19 +58,6 @@ hr {
 #ingredients, #ingredients1, #ingredients2, #ingredients3, #ingredients4, #ingredients5 {
     text-align: center;
     padding: 0 0 5% 0;
-}
-
-img {
-    padding: 0 3%;
-}
-
-h1 {
-    font-size: 1.8rem;
-}
-
-h2 {
-    font-size: 2rem;
-    padding: 0rem 1rem;
 }
 
 #product, form {
