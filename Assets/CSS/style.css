@@ -41,6 +41,11 @@ h2 {
     padding: 0rem 1rem;
 }
 
+/* Adjust input bar to fit in-line with clearBtn */
+input {
+    padding: 1%;
+}
+
 #results {
     display: none;
 }
@@ -49,25 +54,19 @@ h2 {
     display: none;
 }
 
-.middle {
-    width: 60%;
-}
-
-.flex {
+/* .flex {
     display: flex;
     justify-content: right;
     align-items: right;
     flex-direction: column;
-}
+} */
 
+/* Drink Cards Width */
 .card {
-    width: 50%;
+    width: 70%;
 }
 
-.instructions {
-    padding: 0 5%;
-}
-
+/* Drink titles styling */
 #drinkName,
 #drinkName1,
 #drinkName2,
@@ -91,6 +90,7 @@ h2 {
     padding: 0 3% 0 3%
 }
 
+/* Center alignment and bottom padding of ingredients list */
 #ingredients,
 #ingredients1,
 #ingredients2,
@@ -101,16 +101,20 @@ h2 {
     padding: 0 0 5% 0;
 }
 
+/* Styling for product and form */
+.is-one-fourth,
 #product,
 form {
-    padding: 0rem 1rem;
+    padding: 0 1%;
 }
 
+/* Hide bullet points of drinkHistory */
 #drinkHistory ul {
     list-style-type: none;
     flex-direction: column;
 }
 
+/* Styling of drinkHistory button */
 #drinkHistory button {
     align-items: center;
     font-size: 80%;
