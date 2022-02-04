@@ -1,6 +1,6 @@
 /* CSS variables */
 :root {
-    
+
 }
 
 * {
@@ -79,7 +79,7 @@ h2 {
     position: relative;
 }
 
-/* First one needs 1% more top */
+/* First result needs 1% more top padding to match */
 #instructions {
     padding: 1% 3% 0 3%
 }
