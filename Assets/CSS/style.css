@@ -25,10 +25,16 @@ body {
 header {
     text-align: right;
     padding-right: 1%;
+    font-size: 1.5rem;
+    position: sticky;
+    top: 0;
+}
+
+aside {
+    position: fixed;
 }
 
 /* Line divider */
-
 hr {
     color: black;
     height: 5px;
@@ -48,7 +54,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 3rem;
     padding: 0rem 1rem;
 }
 
@@ -81,7 +87,7 @@ input {
 
 /* Drink Cards Width */
 .card {
-    width: 70%;
+    width: 60%;
     background-color: var(--dark);
     color: var(--light);
 }
@@ -138,13 +144,13 @@ form {
 /* Styling of drinkHistory button */
 #drinkHistory button {
     font-family: 'Voltaire', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     align-items: center;
     width: 80%;
     height: auto;
     margin: 1%;
     padding: 2%;
-    border-color: var(--dark);
+    border-color: var(--light);
     background-color: var(--light);
     color: var(--contrast);
     border-radius: 5rem;
@@ -158,4 +164,12 @@ form {
 #clear {
     border-radius: 1rem;
     background-color: var(--contrast);
+}
+
+#anon {
+    color: var(--dark);
+}
+
+#alc {
+    color: var(--contrast);
 }
