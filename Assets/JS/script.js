@@ -33,6 +33,12 @@ const displayDrinkPic5 = document.querySelector("#drinkPic5");
 const displayDrinkInstructions5 = document.querySelector("#instructions5");
 const displayDrinkIngregients5 = document.querySelector("#ingredients5");
 
+const D1 = document.querySelector("#drink1")
+const D2 = document.querySelector("#drink2")
+const D3 = document.querySelector("#drink3")
+const D4 = document.querySelector("#drink4")
+const D5 = document.querySelector("#drink5")
+
 const displayDrinkNullIngregients = document.querySelectorAll("div");
 const searchList = document.querySelector("#drinkHistory");
 const clearList = document.querySelector("#clear");
@@ -141,32 +147,63 @@ function getcocktailId(query) {
                 cocktailValues.drinkId = parsedData.drinks[0].idDrink;
                 cocktailValues.drinkName = parsedData.drinks[0].strDrink;
                 cocktailValues.drinkImage = parsedData.drinks[0].strDrinkThumb;
-
-                cocktailValues2[0].drinkId = parsedData.drinks[1].idDrink;
-                cocktailValues2[0].drinkName = parsedData.drinks[1].strDrink;
-                cocktailValues2[0].drinkImage = parsedData.drinks[1].strDrinkThumb;
-
-                cocktailValues2[1].drinkId = parsedData.drinks[2].idDrink;
-                cocktailValues2[1].drinkName = parsedData.drinks[2].strDrink;
-                cocktailValues2[1].drinkImage = parsedData.drinks[2].strDrinkThumb;
-
-                cocktailValues2[2].drinkId = parsedData.drinks[3].idDrink;
-                cocktailValues2[2].drinkName = parsedData.drinks[3].strDrink;
-                cocktailValues2[2].drinkImage = parsedData.drinks[3].strDrinkThumb;
-
-                cocktailValues2[3].drinkId = parsedData.drinks[4].idDrink;
-                cocktailValues2[3].drinkName = parsedData.drinks[4].strDrink;
-                cocktailValues2[3].drinkImage = parsedData.drinks[4].strDrinkThumb;
-
-                cocktailValues2[4].drinkId = parsedData.drinks[5].idDrink;
-                cocktailValues2[4].drinkName = parsedData.drinks[5].strDrink;
-                cocktailValues2[4].drinkImage = parsedData.drinks[5].strDrinkThumb;
                 getIngrediants(cocktailValues.drinkId);
-                getIngrediants1(cocktailValues2[0].drinkId);
-                getIngrediants2(cocktailValues2[1].drinkId);
-                getIngrediants3(cocktailValues2[2].drinkId);
-                getIngrediants4(cocktailValues2[3].drinkId);
-                getIngrediants5(cocktailValues2[4].drinkId);
+
+                if (parsedData.drinks[1] !== undefined) {
+                    D1.style.display = "block"
+                    cocktailValues2[0].drinkId = parsedData.drinks[1].idDrink;
+                    cocktailValues2[0].drinkName = parsedData.drinks[1].strDrink;
+                    cocktailValues2[0].drinkImage = parsedData.drinks[1].strDrinkThumb;
+                    getIngrediants1(cocktailValues2[0].drinkId);
+                } else {
+                    D1.style.display = "none"
+                }
+
+                if (parsedData.drinks[2] !== undefined) {
+                    D2.style.display = "block"
+                    cocktailValues2[1].drinkId = parsedData.drinks[2].idDrink;
+                    cocktailValues2[1].drinkName = parsedData.drinks[2].strDrink;
+                    cocktailValues2[1].drinkImage = parsedData.drinks[2].strDrinkThumb;
+                    getIngrediants2(cocktailValues2[1].drinkId);
+                } else {
+                    D2.style.display = "none"
+                }
+                console.log(parsedData.drinks[3])
+                if (parsedData.drinks[3] !== undefined) {
+                    D3.style.display = "block"
+                    cocktailValues2[2].drinkId = parsedData.drinks[3].idDrink;
+                    cocktailValues2[2].drinkName = parsedData.drinks[3].strDrink;
+                    cocktailValues2[2].drinkImage = parsedData.drinks[3].strDrinkThumb;
+                    getIngrediants3(cocktailValues2[2].drinkId);
+                } else {
+                    D3.style.display = "none"
+                }
+
+                if (parsedData.drinks[4] !== undefined) {
+                    D4.style.display = "block"
+                    cocktailValues2[3].drinkId = parsedData.drinks[4].idDrink;
+                    cocktailValues2[3].drinkName = parsedData.drinks[4].strDrink;
+                    cocktailValues2[3].drinkImage = parsedData.drinks[4].strDrinkThumb;
+                    getIngrediants4(cocktailValues2[3].drinkId);
+                } else {
+                    D4.style.display = "none"
+                }
+
+                if (parsedData.drinks[5] !== undefined) {
+                    D5.style.display = "block"
+                    cocktailValues2[4].drinkId = parsedData.drinks[5].idDrink;
+                    cocktailValues2[4].drinkName = parsedData.drinks[5].strDrink;
+                    cocktailValues2[4].drinkImage = parsedData.drinks[5].strDrinkThumb;
+                    getIngrediants5(cocktailValues2[4].drinkId);
+                } else {
+                    D5.style.display = "none"
+                }
+
+
+
+
+
+
             }
         })
 }
