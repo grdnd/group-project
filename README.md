@@ -30,3 +30,5 @@ After searching the item will be added to the searched list just below the searc
 | [Gordon Do](https://github.com/grdnd) | HTML, CSS  |
 | [Jorge Macias](https://github.com/jmacnun1985) | HTML, Presentation Slides  |
 | [Tyler Welker](https://github.com/TWelk) | HTML, JavaScript  |
+| [Jason Yoo](https://github.com/jasonjayoo) | Performed code examples and performed code reviews  |
+| [Jeoffrey Batangan](https://github.com/mrjeoffrey) | Tough Figma and gave pointers on the mock up  |

@@ -91,16 +91,27 @@ var cocktailValues2 = {
 //event listener for the seachbuttom. this will grab the first fetch using the value typed in the textbox
 searchBtn.addEventListener("click", function(event) {
     event.preventDefault();
-    display.style.display = "block"
-    display2.style.display = "block"
-    displayDrinkName.innerHTML = "";
-    displayDrinkPic.innerHTML = "";
-    displayDrinkInstructions.innerHTML = "";
-    var drink = search.value;
-    searchList.innerHTML = "";
-    creatHistoryList();
-    setHistoryList();
-    getcocktailId(drink);
+    console.log(search.value)
+    if (search.value === null || search.value === "") {
+        display.style.display = "block";
+        displayDrinkName.innerHTML = "";
+        displayDrinkPic.innerHTML = "";
+        displayDrinkInstructions.innerHTML = "";
+        var drink = search.value;
+        searchList.innerHTML = "";
+        getcocktailId(drink);
+    } else {
+        display.style.display = "block";
+        display2.style.display = "block";
+        displayDrinkName.innerHTML = "";
+        displayDrinkPic.innerHTML = "";
+        displayDrinkInstructions.innerHTML = "";
+        var drink = search.value;
+        searchList.innerHTML = "";
+        creatHistoryList();
+        setHistoryList();
+        getcocktailId(drink);
+    }
 })
 
 // function to run the first fetch. this grabs the drink ID
@@ -470,8 +481,10 @@ function displayResults5() {
 //this will create the local storage
 function creatHistoryList() {
     var list = search.value;
-    drinkArray.push(list);
-    localStorage.setItem("drinkHistory", JSON.stringify(drinkArray));
+    if (list !== null || list !== "") {
+        drinkArray.push(list);
+        localStorage.setItem("drinkHistory", JSON.stringify(drinkArray));
+    }
 }
 //this will display the local storage
 function setHistoryList() {
@@ -492,8 +505,12 @@ function setHistoryList() {
 //this is the eventlistener for the history buttons that will re-search and display weather data
 searchList.addEventListener("click", function(event) {
     event.preventDefault();
-    display.style.display = "block"
-    display2.style.display = "block"
+    if (search.value === null || search.value === "") {
+        display.style.display = "block";
+    } else {
+        display.style.display = "block";
+        display2.style.display = "block";
+    }
     var valueDrink = event.target.textContent;
     search.value = valueDrink;
     getcocktailId(search.value);
@@ -502,8 +519,8 @@ searchList.addEventListener("click", function(event) {
 
 clearList.addEventListener("click", function(event) {
     event.preventDefault();
-    display.style.display = "none"
-    display2.style.display = "none"
+    display.style.display = "none";
+    display2.style.display = "none";
     localStorage.clear();
     location.reload();
 })
