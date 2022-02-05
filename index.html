@@ -23,7 +23,7 @@
         <!-- Bulma columns container -->
         <section class="columns">
             <!-- First column for search & drinkHistory -->
-            <aside class="column is-one-fourth">
+            <aside class="column is-one-third">
                 <h2>Search for an ingredient:</h2>
                 <form>
                     <input type="text" placeholder="What's YOUR buzz?" id="product" autocomplete="off" />
@@ -33,15 +33,16 @@
                 <hr>
                 <!-- Draws a line -->
                 <!-- Container for search history buttons -->
-                <div class="histContainer">
+                <div class="histContainer column is-offset-1">
                     <div id="drinkHistory"></div>
                 </div>
             </aside>
-            <div class="column is-one-fifth is-centered middle"></div>
+            <!-- Invisible middle column -->
+            <!-- <div class="column is-one-fifth is-centered middle"></div> -->
             <!-- Third column contains drinks -->
-            <div class="column is-three-fifths" id="column2">
+            <div class="column is-three-fifths is-offset-1" id="column2">
                 <section id="results">
-                    <div class="card flex">
+                    <div class="card">
                         <h1 id="drinkName"></h1>
                         <img href="" id="drinkPic"></img>
                         <div id="instructions"></div>
