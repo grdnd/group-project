@@ -15,7 +15,7 @@ This will grab a list of drinks and then display:
 After searching the item will be added to the searched list just below the search bar so the user can search the ingredieant again.
 
 ##Demo
-![DemoVideo](./Assets/Imagaes/AnonymousAlcoholicsPreview.gif)
+![DemoVideo](./Assets\Images/AnonymousAlcoholicsPreview.gif)
 
 ## Live Site
 * Application:
