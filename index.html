@@ -17,14 +17,14 @@
 
 <body>
     <header>
-        Anonymous Alcoholics
+        <span id="anon">Anonymous </span><span id="alc">Alcoholics</span>
     </header>
     <main>
         <!-- Bulma columns container -->
         <section class="columns">
             <!-- First column for search & drinkHistory -->
             <aside class="column is-one-third">
-                <h2>Search for an ingredient:</h2>
+                <h2 id="intro">Search for an ingredient:</h2>
                 <form>
                     <input type="text" placeholder="What's YOUR buzz?" id="product" autocomplete="off" />
                     <button type="submit" id="search"><i class="fa fa-search"></i></button>
@@ -40,7 +40,7 @@
             <!-- Invisible middle column -->
             <!-- <div class="column is-one-fifth is-centered middle"></div> -->
             <!-- Third column contains drinks -->
-            <div class="column is-three-fifths is-offset-1" id="column2">
+            <div class="column is-three-fifths is-offset-6" id="column2">
                 <section id="results">
                     <div class="card">
                         <h1 id="drinkName"></h1>
