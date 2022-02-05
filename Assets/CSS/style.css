@@ -1,6 +1,11 @@
 /* CSS variables */
 :root {
-
+    --main-bg-color: #1481BA;
+    --secondary-color: #0CAADC;
+    --light: #E0D68A;
+    --contrast: #D1603D;
+    --dark: #14110F;
+    --hr: #11B5E4;
 }
 
 * {
@@ -8,7 +13,12 @@
     /* text-align: center; */
 }
 
+html {
+    background-color: var(--main-bg-color);
+}
+
 body {
+    color: var(--light);
     font-family: 'Voltaire', sans-serif;
 }
 
@@ -24,8 +34,9 @@ hr {
     height: 5px;
     background-color: black;
     opacity: 1;
-    margin: 3%;
+    /* margin: 3%; */
     width: 100%;
+    /* background-color: var(--hr); */
 }
 
 img {
@@ -41,13 +52,20 @@ h2 {
     padding: 0rem 1rem;
 }
 
+aside {
+    margin-left: 4%;
+}
+
 /* Adjust input bar to fit in-line with clearBtn */
 input {
-    padding: 1%;
+    width: 300px;
+    background-color: var(--dark);
+    color: var(--contrast);
 }
 
 #results {
     display: none;
+    color: var(--light);
 }
 
 #results2 {
@@ -64,6 +82,8 @@ input {
 /* Drink Cards Width */
 .card {
     width: 70%;
+    background-color: var(--dark);
+    color: var(--light);
 }
 
 /* Drink titles styling */
@@ -73,6 +93,7 @@ input {
 #drinkName3,
 #drinkName4,
 #drinkName5 {
+    color: var(--light);
     font-size: 300%;
     margin: 0 0 0 3%;
     position: relative;
@@ -101,11 +122,11 @@ input {
     padding: 0 0 5% 0;
 }
 
-/* Styling for product and form */
+/* Fixed padding for product and form */
 .is-one-fourth,
 #product,
 form {
-    padding: 0 1%;
+    padding: 0 2%;
 }
 
 /* Hide bullet points of drinkHistory */
@@ -116,8 +137,25 @@ form {
 
 /* Styling of drinkHistory button */
 #drinkHistory button {
+    font-family: 'Voltaire', sans-serif;
+    font-size: 2rem;
     align-items: center;
-    font-size: 80%;
-    width: 100%;
+    width: 80%;
+    height: auto;
     margin: 1%;
+    padding: 2%;
+    border-color: var(--dark);
+    background-color: var(--light);
+    color: var(--contrast);
+    border-radius: 5rem;
+}
+
+/* Search btn styling */
+#search {
+    border-radius: 1rem;
+}
+/* Clear btn styling */
+#clear {
+    border-radius: 1rem;
+    background-color: var(--contrast);
 }
