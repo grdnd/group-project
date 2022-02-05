@@ -53,7 +53,7 @@ h1 {
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 0rem 1rem;
 }
 
@@ -64,6 +64,7 @@ aside {
 /* Adjust input bar to fit in-line with clearBtn */
 input {
     width: 300px;
+    border-radius: .5rem;
     background-color: var(--dark);
     color: var(--contrast);
 }
@@ -152,17 +153,32 @@ form {
     border-color: var(--light);
     background-color: var(--light);
     color: var(--contrast);
-    border-radius: 5rem;
+    border-radius: 1.5rem;
+}
+
+#drinkHistory button:hover {
+    background-color: var(--main-bg-color);
+    color: var(--light);
 }
 
 /* Search btn styling */
 #search {
     border-radius: 1rem;
 }
+#search:hover {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
 /* Clear btn styling */
 #clear {
     border-radius: 1rem;
     background-color: var(--contrast);
+    height: auto
+}
+#clear:hover {
+    background-color: var(--main-bg-color);
+    color: var(--light);
 }
 
 /* Header span class */
@@ -173,4 +189,33 @@ form {
 /* Alcohol span class */
 #alc {
     color: var(--contrast);
+}
+
+#mobile {
+    color: var(--main-bg-color);
+}
+
+@media screen and (max-width: 1031px) {
+    h2 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        background-color: var(--dark);
+    }
+    input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
 }
