@@ -38,11 +38,10 @@ aside {
 hr {
     color: black;
     height: 5px;
-    background-color: black;
+    background-color: var(--contrast);
     opacity: 1;
-    /* margin: 3%; */
+    margin: 3% 0 0 0;
     width: 100%;
-    /* background-color: var(--hr); */
 }
 
 img {
@@ -166,10 +165,12 @@ form {
     background-color: var(--contrast);
 }
 
+/* Header span class */
 #anon {
     color: var(--dark);
 }
 
+/* Alcohol span class */
 #alc {
     color: var(--contrast);
 }
