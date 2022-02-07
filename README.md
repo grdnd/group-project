@@ -1,4 +1,4 @@
-# group-project
+# Group-Project
 --------------------
 Project 1
 --------------------
