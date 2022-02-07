@@ -195,16 +195,27 @@ form {
     color: var(--main-bg-color);
 }
 
-@media screen and (max-width: 1031px) {
-    h2 {
-        font-size: 1rem;
-    }
-}
-
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1215px) {
     input {
         width: 100%;
     }
+    
+    h2 {
+        font-size: 150%;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    h2 {
+        font-size: 150%;
+    }
+}
+
+@media screen and (max-width: 808px) {
+    h2 {
+        font-size: 140%;
+    }
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -214,8 +225,6 @@ form {
     input {
         width: 100%;
     }
-}
-
-@media screen and (max-width: 768px) {
-    
+    .card {
+    }
 }
