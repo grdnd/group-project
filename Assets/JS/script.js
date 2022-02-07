@@ -46,7 +46,6 @@ const drinkArray = JSON.parse(localStorage.getItem("drinkHistory")) || []
 
 var cocktail = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
 var cocktailIngrediants = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
-const unhide = document.getElementsByClassName(".card");
 
 var cocktailValues = {
     drinkId: "",
@@ -209,12 +208,6 @@ function getcocktailId(query) {
                 } else {
                     D5.style.display = "none"
                 }
-
-
-
-
-
-
             }
         })
 }
@@ -505,15 +498,16 @@ function setHistoryList() {
 //this is the eventlistener for the history buttons that will re-search and display weather data
 searchList.addEventListener("click", function(event) {
     event.preventDefault();
+    var valueDrink = event.target.textContent;
+    search.value = valueDrink;
     if (search.value === null || search.value === "") {
         display.style.display = "block";
+        getcocktailId(search.value);
     } else {
         display.style.display = "block";
         display2.style.display = "block";
+        getcocktailId(search.value);
     }
-    var valueDrink = event.target.textContent;
-    search.value = valueDrink;
-    getcocktailId(search.value);
     console.log(search.value);
 })
 
