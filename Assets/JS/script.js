@@ -42,6 +42,7 @@ const D5 = document.querySelector("#drink5")
 const displayDrinkNullIngregients = document.querySelectorAll("div");
 const searchList = document.querySelector("#drinkHistory");
 const clearList = document.querySelector("#clear");
+const formSearch = document.querySelector("#searchForm")
 const drinkArray = JSON.parse(localStorage.getItem("drinkHistory")) || []
 
 var cocktail = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=";
@@ -517,6 +518,14 @@ clearList.addEventListener("click", function(event) {
     display2.style.display = "none";
     localStorage.clear();
     location.reload();
+})
+
+window.addEventListener("resize", function() {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        searchList.style.display = "none"
+    } else {
+        searchList.style.display = "block"
+    }
 })
 
 setHistoryList();
