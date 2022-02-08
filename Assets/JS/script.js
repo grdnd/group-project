@@ -517,6 +517,7 @@ searchList.addEventListener("click", function(event) {
     console.log(search.value);
 })
 
+//this is the eventlistener clears the local storage and refreshes the page
 clearList.addEventListener("click", function(event) {
     event.preventDefault();
     display.style.display = "none";
@@ -525,13 +526,20 @@ clearList.addEventListener("click", function(event) {
     location.reload();
 })
 
-function showHide() {
-    if (window.screen.width < 769) {
-        searchList.style.display = "none"
-    } else {
+// Adds and removes display style depending on screen width.
+function screenClass() {
+    if($(window).innerWidth() > 768) {
         searchList.style.display = "block"
-        setHistoryList();
+    } else {
+        searchList.style.display = "none"
     }
 }
 
-showHide()
+screenClass();
+
+// And recheck when window gets resized.
+$(window).bind('resize',function(){
+    screenClass();
+});
+
+setHistoryList(); 
