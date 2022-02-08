@@ -520,12 +520,13 @@ clearList.addEventListener("click", function(event) {
     location.reload();
 })
 
-window.addEventListener("resize", function() {
-    if (window.matchMedia("(max-width: 768px)").matches) {
+function showHide() {
+    if (window.screen.width < 769) {
         searchList.style.display = "none"
     } else {
         searchList.style.display = "block"
+        setHistoryList();
     }
-})
+}
 
-setHistoryList();
+showHide()
