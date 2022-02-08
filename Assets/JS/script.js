@@ -94,11 +94,13 @@ searchBtn.addEventListener("click", function(event) {
     console.log(search.value)
     if (search.value === null || search.value === "") {
         display.style.display = "block";
+        display2.style.display = "none";
         displayDrinkName.innerHTML = "";
         displayDrinkPic.innerHTML = "";
         displayDrinkInstructions.innerHTML = "";
         var drink = search.value;
         searchList.innerHTML = "";
+        setHistoryList();
         getcocktailId(drink);
     } else {
         display.style.display = "block";
@@ -475,9 +477,12 @@ function displayResults5() {
 //this will create the local storage
 function creatHistoryList() {
     var list = search.value;
+
     if (list !== null || list !== "") {
-        drinkArray.push(list);
-        localStorage.setItem("drinkHistory", JSON.stringify(drinkArray));
+        if (drinkArray.indexOf(list) == -1) {
+            drinkArray.push(list);
+            localStorage.setItem("drinkHistory", JSON.stringify(drinkArray));
+        }
     }
 }
 //this will display the local storage
