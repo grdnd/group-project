@@ -67,10 +67,12 @@ aside {
 /* Adjust input bar to fit in-line with clearBtn */
 
 input {
+    font-family: 'Voltaire', sans-serif;
     width: 300px;
     border-radius: .5rem;
     background-color: var(--dark);
     color: var(--contrast);
+    width: 100%;
 }
 
 #results {
@@ -185,7 +187,8 @@ form {
 /* Search btn styling */
 
 #search {
-    border-radius: 1rem;
+    border-radius: .5rem;
+    width: 36%;
 }
 
 #search:hover {
@@ -197,9 +200,10 @@ form {
 /* Clear btn styling */
 
 #clear {
-    border-radius: 1rem;
+    font-family: 'Voltaire', sans-serif;
+    border-radius: .5rem;
     background-color: var(--contrast);
-    height: auto
+    width: 36%;
 }
 
 #clear:hover {
@@ -255,12 +259,14 @@ form {
         flex-direction: column;
     }
     form button {
-        width: 75%;
+        margin: 1% 0 0 1%;
     }
     input {
+        height: 2rem;
         width: 75%;
     }
     hr {
+        margin: 1% 0 0 0;
         width: 75%;
     }
     #drinkHistory button {
@@ -274,5 +280,9 @@ form {
     }
     aside {
         position: relative;
+    }
+    #search,
+    #clear {
+        height: 2rem
     }
 }
