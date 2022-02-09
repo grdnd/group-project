@@ -64,17 +64,18 @@ aside {
 }
 
 
-/* Adjust input bar to fit in-line with clearBtn */
+/* Input bars adjustment */
 
 input {
     font-family: 'Voltaire', sans-serif;
-    width: 300px;
     border-radius: .5rem;
     background-color: var(--dark);
     color: var(--contrast);
     width: 100%;
+    outline: none;
 }
 
+/* Card results text coloring */
 #results {
     display: none;
     color: var(--light);
@@ -188,7 +189,7 @@ form {
 
 #search {
     border-radius: .5rem;
-    width: 36%;
+    width: 49%;
 }
 
 #search:hover {
@@ -203,7 +204,7 @@ form {
     font-family: 'Voltaire', sans-serif;
     border-radius: .5rem;
     background-color: var(--contrast);
-    width: 36%;
+    width: 49%;
 }
 
 #clear:hover {
@@ -291,6 +292,7 @@ form {
     }
     #search,
     #clear {
+        width: 36%;
         height: 2rem
     }
 }
