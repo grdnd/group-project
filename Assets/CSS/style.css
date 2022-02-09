@@ -188,6 +188,7 @@ form {
 /* Search btn styling */
 
 #search {
+    margin: 1% 0 0 .5%;
     border-radius: .5rem;
     width: 49%;
 }
@@ -260,7 +261,7 @@ form {
         flex-direction: column;
     }
     form button {
-        margin: 1% 0 0 1%;
+        margin: 0 2%;
     }
     input {
         height: 2rem;
