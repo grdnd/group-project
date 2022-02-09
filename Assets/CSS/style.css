@@ -185,27 +185,27 @@ form {
 }
 
 
-/* Search btn styling */
+/* Search & Clear btn styling */
 
 #search {
     margin: 1% 0 0 .5%;
+}
+#clear {
+    font-family: 'Voltaire', sans-serif;
+    background-color: var(--contrast);
+    margin-bottom: 2%;
+}
+
+#search,
+#clear {
     border-radius: .5rem;
     width: 49%;
+    height: 1.5rem;
 }
 
 #search:hover {
     background-color: var(--dark);
     color: var(--light);
-}
-
-
-/* Clear btn styling */
-
-#clear {
-    font-family: 'Voltaire', sans-serif;
-    border-radius: .5rem;
-    background-color: var(--contrast);
-    width: 49%;
 }
 
 #clear:hover {
